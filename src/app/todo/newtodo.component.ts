@@ -16,4 +16,7 @@ export class NewTodoComponent {
     });
   }
 
+  onAddTodo() {
+    console.log(this.newTodoForm.value.newTodo);
+  }
 }

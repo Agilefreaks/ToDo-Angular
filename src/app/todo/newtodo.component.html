@@ -3,10 +3,10 @@
   <form [formGroup]="newTodoForm">
     <div class="row">
       <div class="col-sm-5 col-sm-offset-3">
-        <input type="text" class="form-control" formControlName="newTodo">
+        <input type="text" class="form-control" (keyup.enter)="onAddTodo()" formControlName="newTodo">
       </div>
       <div class="col-sm-2">
-        <button class="btn btn-info">Add todo</button>
+        <button class="btn btn-info" (click)="onAddTodo()">Add todo</button>
       </div>
     </div>
     <div class="row" *ngIf="!newTodoForm.controls['newTodo'].valid && newTodoForm.controls['newTodo'].touched">
