@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Todo } from './todo.model';
 
 @Component({
   selector: 'app-newtodo',
@@ -9,6 +10,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class NewTodoComponent {
 
   newTodoForm: FormGroup;
+  todos: Todo[] = [];
 
   constructor() {
     this.newTodoForm = new FormGroup({
@@ -17,6 +19,10 @@ export class NewTodoComponent {
   }
 
   onAddTodo() {
-    console.log(this.newTodoForm.value.newTodo);
+    let todoDescription = this.newTodoForm.value.newTodo;
+    if (todoDescription) {
+      this.todos.push(new Todo(todoDescription, false));
+      this.newTodoForm.controls['newTodo'].setValue('');
+    }
   }
 }
