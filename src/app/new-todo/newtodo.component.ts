@@ -11,7 +11,7 @@ import { TodoService } from '../services/todo.service';
 
 export class NewTodoComponent {
   newTodoForm: FormGroup;
-  showError: boolean;
+  showError: boolean = false;
 
   constructor(private todoService: TodoService) {
     this.newTodoForm = new FormGroup({
@@ -24,7 +24,7 @@ export class NewTodoComponent {
     if (todoDescription) {
       this.showError = false;
 
-      let todo = new Todo(todoDescription, false);
+      let todo = new Todo(todoDescription);
 
       this.todoService.addTodo(todo);
 
