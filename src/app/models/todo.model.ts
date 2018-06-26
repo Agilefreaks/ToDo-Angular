@@ -5,7 +5,7 @@ export class Todo {
 
     constructor(
         public description: string,
-        public isChecked?: boolean
+        public isChecked: boolean = false
     ) {
         this.uuid = uuid();
     }
