@@ -29,11 +29,18 @@ describe('TodoService', () => {
     expect(service.getTodos().length).toEqual(1);
   });
 
+  it('#addTodo should add the element to the array', () => {
+    let todo: Todo = new Todo("Todo #1");
+    service.addTodo(todo);
+
+    expect(service.getTodos()).toContain(todo);
+  });
+
   it('#removeTodoWithUuid should remove element from array by uuid', () => {
     let todo: Todo = new Todo("Todo #1");
     service.addTodo(todo);
 
     service.removeTodoWithUuid(todo.uuid);
-    expect(service.getTodos().length).toEqual(0);
+    expect(service.getTodos()).not.toContain(todo);
   });
 });

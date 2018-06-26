@@ -22,5 +22,4 @@ export class TodoService {
       this.todos.splice(indexOfTodo, 1);
     }
   }
-
 }
