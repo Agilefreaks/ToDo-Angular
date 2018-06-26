@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NewTodoComponent } from './todo/newtodo.component';
+import { TodoService } from './services/todo.service';
 
 
 @NgModule({
@@ -17,7 +18,9 @@ import { NewTodoComponent } from './todo/newtodo.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    TodoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
