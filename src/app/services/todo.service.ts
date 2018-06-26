@@ -14,7 +14,7 @@ export class TodoService {
     this.todos.push(todo);
   }
 
-  removeTodoWith(uuid: string) {
+  removeTodoWithUuid(uuid: string) {
     let result: Todo[] = this.todos.filter(todo => todo.uuid == uuid)
 
     let indexOfTodo = this.todos.indexOf(result[0]);
