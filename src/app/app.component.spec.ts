@@ -11,9 +11,7 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        NewTodoComponent,
-        TodoComponent,
-        TodoListComponent
+        NewTodoComponent
       ],
       imports: [
         FormsModule,
