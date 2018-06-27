@@ -1,18 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { NewTodoComponent } from './new-todo/newtodo.component';
+import { TodoService } from './services/todo.service';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NewTodoComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    TodoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
